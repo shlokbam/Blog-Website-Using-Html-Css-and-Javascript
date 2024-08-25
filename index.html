@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Full-Screen Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 id="animated_title">Evolution Of Frameworks in Web Developmet</h1>
+    </header>
+    <div id="colorPicker">
+        <input type="color" id="bgColor" value="#ffffff">
+        <label for="bgColor">Change Background</label>
+    </div>
+    <main>
+
+        <article id="blogContent">
+            <h1 class="animated-header">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</h1>
+            <p>What's up, code warriors and pixel pushers! 👋 Ready for a wild ride through the evolution of web frameworks? 
+            Grab your favourite caffeinated beverage ☕️, because we're about to blast from the past to the future faster than you can say "npm install react"! 
+            Let's dive into the thrilling, frustrating, and sometimes downright bizarre world of web development. 🏄‍♂️💻</p>
+            
+            <p>From the dark ages of table-based layouts to the shining future of AI-assisted coding, we've come a long way. 
+            This journey has been filled with triumphs, tears, and more deprecated APIs than we care to remember. 
+            So, strap in, fellow developers, as we embark on this nostalgic yet forward-looking adventure!</p>
+        
+            <div class="image-container">
+                <img src="1.jpg" alt="Evolution of Web Frameworks" id="image">
+            </div>
+        
+            <h2 class="animated-header">🦕 The Prehistoric Era: Vanilla JavaScript and the DOM Wars</h2>
+            <p>Picture this: it's the early 2000s. Britney Spears is topping the charts, flip phones are the height of tech, 
+            and developers are battling with vanilla JavaScript like it's a ferocious T-Rex. 🦖</p>
+        
+            <pre class="code-block animated-code">
+        <code class="language-javascript">
+        // Vanilla JS: As elegant as a bull in a china shop 
+        document.addEventListener('DOMContentLoaded', function() { 
+          var button = document.getElementById('myButton'); 
+          var content = document.getElementById('content'); 
+           
+          button.addEventListener('click', function() { 
+            if (content.style.display === 'none') { 
+              content.style.display = 'block'; 
+            } else { 
+              content.style.display = 'none'; 
+            } 
+          }); 
+        });
+        </code>
+        </pre>
+        
+            <div class="callout animated-callout">
+                <p>Spoiler alert: This code is about as pretty as a website built with marquee tags. But hey, it worked... when Mercury wasn't in retrograde. 🔮</p>
+            </div>
+        
+            <p>Developers spent more time fighting browser inconsistencies than actually building cool stuff. 
+            Internet Explorer was the final boss that nobody wanted to face. 😱</p>
+        
+            <p>Remember the joy of writing separate code for IE6, IE7, Firefox, and if you were really adventurous, 
+            that new browser called "Chrome"? Cross-browser compatibility was the stuff of nightmares, and CSS hacks were our teddy bears.</p>
+        
+            <h3 class="animated-header">The Challenges of Ye Olde Vanilla JS</h3>
+            <ul class="animated-list">
+                <li>Browser wars fiercer than Game of Thrones 🗡️</li>
+                <li>"Object Expected" errors haunting dreams 👻</li>
+                <li>Callback hell deeper than the Mariana Trench 🌊</li>
+                <li>Performance issues on mighty 512MB RAM machines 🐌</li>
+                <li>The dreaded "Works on my machine" syndrome 🖥️</li>
+                <li>Debugging with alert() because console.log wasn't cool yet 🚨</li>
+            </ul>
+            <h2>🎥 Featured Videos</h2>
+            <div class="video-gallery">
+                <div class="video-thumbnail">
+                    <a href="https://www.youtube.com/watch?v=rF5FlDoCcao" target="_blank">
+                        <img src="3.jpg" alt="Video 1 Thumbnail">
+                    </a>
+                </div>
+                <br><br>
+                <div class="video-thumbnail">
+                    <a href="https://www.youtube.com/watch?v=Gwup7MV_fXs" target="_blank">
+                        <img src="4.jpg" alt="Video 2 Thumbnail">
+                    </a>
+                </div>
+            </div>
+
+        </article>
+
+        <article id="blogContent">
+            <h2 class="animated-header">🍔 jQuery: The Challenges of Ye Olde Vanilla JS</h2>
+            <p>Then, in 2006, jQuery rolled up like a food truck in a desert of despair. Suddenly, developers could manipulate the DOM and make AJAX calls easier than ordering a cheeseburger. 🍔</p>
+            
+            <p>jQuery was the superhero we needed, swooping in to save us from browser inconsistencies and verbose vanilla JavaScript. It was like finding an oasis in the desert of web development – refreshing, life-saving, and almost too good to be true.</p>
+            
+            <div class="image-container">
+                <img src="2.png" alt="jQuery Logo or DOM Manipulation Visual" id="image">
+            </div>
+            
+            <pre class="code-block animated-code">
+                <code class="language-javascript">
+                // jQuery: Making JavaScript great again (before it was cool) 
+                $(document).ready(function() { 
+                  $('#myButton').click(function() { 
+                    $('#content').toggle(); 
+                  }); 
+                });
+                </code>
+            </pre>
+            
+            <p>jQuery didn't just make coding easier; it made it fun! 🎉 Suddenly, you could chain methods like a boss:</p>
+            
+            <pre class="code-block animated-code">
+                <code class="language-javascript">
+                $('#myElement') 
+                  .addClass('awesome') 
+                  .css('color', 'rebeccapurple') 
+                  .fadeIn(1000) 
+                  .slideUp(500) 
+                  .slideDown(500);
+                </code>
+            </pre>
+            
+            <div class="callout animated-callout">
+                <p>jQuery was like the Swiss Army knife of web development. It sliced, it diced, it made julienne fries! But like all good things, its reign couldn't last forever. 🗡️</p>
+            </div>
+            
+            <p>jQuery plugins became the new frontier. Need a slider? There's a plugin for that. Want a fancy lightbox? Plugin. Datepicker? You guessed it – plugin. The jQuery plugin ecosystem exploded faster than you could say "$(this)".</p>
+            
+            <h2 class="animated-header">🌟 The SPA Universe Expands: AngularJS and Backbone.js</h2>
+            <p>As web apps got more complex, developers needed more structure. Enter AngularJS and Backbone.js, the architects of the Single Page Application (SPA) revolution. 🏗️</p>
+            
+            <p>These frameworks brought structure to our chaotic JavaScript world, introducing concepts like MVC (Model-View-Controller) and MVVM (Model-View-ViewModel) to front-end development. Suddenly, we were building web apps that felt more like desktop applications, and our backends breathed a sigh of relief as they offloaded more work to the client-side.</p>
+            
+            <h3 class="animated-header">AngularJS: Google's Mad Science Experiment</h3>
+            <p>AngularJS burst onto the scene in 2010, bringing two-way data binding and dependency injection to the party. It was like magic... until it wasn't. 🎩✨</p>
+            
+            <pre class="code-block animated-code">
+                <code class="language-javascript">
+                // AngularJS: Because who doesn't love a good $scope? 
+                angular.module('myApp', []) 
+                  .controller('MyController', function($scope) { 
+                    $scope.message = 'Hello, AngularJS!'; 
+                    $scope.updateMessage = function() { 
+                      $scope.message = 'AngularJS is magical!'; 
+                    }; 
+                  });
+                </code>
+            </pre>
+            
+            <p>AngularJS was like that one friend who's super smart but also a bit... extra. It solved problems we didn't even know we had, but also introduced concepts that made our brains hurt. 🤯</p>
+            
+            <h3 class="animated-header">Backbone.js: Bringing Structure to Chaos</h3>
+            <p>Meanwhile, Backbone.js was like the Marie Kondo of JavaScript frameworks, helping developers tidy up their spaghetti code into neat little models, views, and routers. 🍝➡️📦</p>
+            
+            <pre class="code-block animated-code">
+                <code class="language-javascript">
+                // Backbone.js: Sparking joy in JavaScript since 2010 
+                var Todo = Backbone.Model.extend({ 
+                  defaults: { 
+                    title: '', 
+                    completed: false 
+                  } 
+                }); 
+                
+                var TodoView = Backbone.View.extend({ 
+                  tagName: 'li', 
+                  render: function() { 
+                    this.$el.html(this.model.get('title')); 
+                    return this; 
+                  } 
+                }); 
+                
+                var TodoRouter = Backbone.Router.extend({ 
+                  routes: { 
+                    "todos/:id": "getTodo" 
+                  }, 
+                  getTodo: function(id) { 
+                    // Logic to fetch and display a specific todo 
+                  } 
+                });
+                </code>
+            </pre>
+            
+            <div class="callout animated-callout">
+                <p>Backbone.js taught us that with great power comes great responsibility... and a lot of boilerplate code. 🦸‍♂️</p>
+            </div>
+            
+            <p>Backbone.js was minimalistic yet powerful. It gave structure without being overly opinionated, allowing developers to build large-scale applications without losing their minds. It was the JavaScript equivalent of a well-organized toolbox – everything had its place, but you still had to know how to use the tools.</p>
+            
+        </article>
+
+        <div class="animation-container">
+            <div class="flip-card" id="animated_flip_card">
+              <div class="flip-front">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</div>
+              <div class="flip-back">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</div>
+            </div>
+          </div>
+        
+        
+        
+        <div class="stats">
+            <span id="viewCount">0</span> views
+            <button id="likeButton">Like</button>
+            <span id="likeCount">0</span> likes
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
