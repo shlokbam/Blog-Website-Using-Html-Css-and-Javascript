@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
 <body>
     <header>
         <h1 id="animated_title">Evolution Of Frameworks in Web Developmet</h1>
@@ -17,8 +23,16 @@
     </div>
     <main>
 
+      <div id="sidePanel" class="side-panel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      </div>
+      
+      
+      <span class="hamburger" onclick="openNav()">&#9776;</span>
+
         <article id="blogContent">
-            <h1 class="animated-header">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</h1>
+            <h2 class="animated-header">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</h2>
             <p>What's up, code warriors and pixel pushers! 👋 Ready for a wild ride through the evolution of web frameworks? 
             Grab your favourite caffeinated beverage ☕️, because we're about to blast from the past to the future faster than you can say "npm install react"! 
             Let's dive into the thrilling, frustrating, and sometimes downright bizarre world of web development. 🏄‍♂️💻</p>
@@ -63,7 +77,7 @@
             <p>Remember the joy of writing separate code for IE6, IE7, Firefox, and if you were really adventurous, 
             that new browser called "Chrome"? Cross-browser compatibility was the stuff of nightmares, and CSS hacks were our teddy bears.</p>
         
-            <h3 class="animated-header">The Challenges of Ye Olde Vanilla JS</h3>
+            <h3 class=>The Challenges of Ye Olde Vanilla JS</h3>
             <ul class="animated-list">
                 <li>Browser wars fiercer than Game of Thrones 🗡️</li>
                 <li>"Object Expected" errors haunting dreams 👻</li>
@@ -134,7 +148,7 @@
             
             <p>These frameworks brought structure to our chaotic JavaScript world, introducing concepts like MVC (Model-View-Controller) and MVVM (Model-View-ViewModel) to front-end development. Suddenly, we were building web apps that felt more like desktop applications, and our backends breathed a sigh of relief as they offloaded more work to the client-side.</p>
             
-            <h3 class="animated-header">AngularJS: Google's Mad Science Experiment</h3>
+            <h3 class=>AngularJS: Google's Mad Science Experiment</h3>
             <p>AngularJS burst onto the scene in 2010, bringing two-way data binding and dependency injection to the party. It was like magic... until it wasn't. 🎩✨</p>
             
             <pre class="code-block animated-code">
@@ -152,7 +166,7 @@
             
             <p>AngularJS was like that one friend who's super smart but also a bit... extra. It solved problems we didn't even know we had, but also introduced concepts that made our brains hurt. 🤯</p>
             
-            <h3 class="animated-header">Backbone.js: Bringing Structure to Chaos</h3>
+            <h3>Backbone.js: Bringing Structure to Chaos</h3>
             <p>Meanwhile, Backbone.js was like the Marie Kondo of JavaScript frameworks, helping developers tidy up their spaghetti code into neat little models, views, and routers. 🍝➡️📦</p>
             
             <pre class="code-block animated-code">
@@ -191,16 +205,6 @@
             <p>Backbone.js was minimalistic yet powerful. It gave structure without being overly opinionated, allowing developers to build large-scale applications without losing their minds. It was the JavaScript equivalent of a well-organized toolbox – everything had its place, but you still had to know how to use the tools.</p>
             
         </article>
-
-        <div class="animation-container">
-            <div class="flip-card" id="animated_flip_card">
-              <div class="flip-front">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</div>
-              <div class="flip-back">🚀 The Epic Saga of Web Frameworks: From Clunky Code to AI Superpowers</div>
-            </div>
-          </div>
-        
-        
-        
         <div class="stats">
             <span id="viewCount">0</span> views
             <button id="likeButton">Like</button>

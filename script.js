@@ -92,54 +92,32 @@ colorPicker.addEventListener('change', (e) => {
     toggleDarkMode(e.target.value);
 });
 
-document.querySelectorAll('.video-thumbnail').forEach(item => {
-    item.addEventListener('mouseover', () => {
-        item.style.transform = 'scale(1.1)';
+// Side Panel Functionality
+function openNav() {
+    document.getElementById("sidePanel").style.width = "250px";
+}
+  
+function closeNav() {
+    document.getElementById("sidePanel").style.width = "0";
+}
+  
+// Function to populate the side panel with headings
+function populateSidePanel() {
+    const sidePanel = document.getElementById("sidePanel");
+    const headings = document.querySelectorAll('h1, h2');
+    
+    headings.forEach(heading => {
+      if (!heading.id) {
+        heading.id = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+      }
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent;
+      link.onclick = closeNav;
+      sidePanel.appendChild(link);
     });
+}
 
-    item.addEventListener('mouseout', () => {
-        item.style.transform = 'scale(1)';
-    });
-});
-
-var card = document.querySelector("#animated_card");
-var playing = false;
-
-card.addEventListener('click', function() {
-  if (playing) return;
-
-  playing = true;
-  anime({
-    targets: card,
-    scale: [{ value: 1 }, { value: 1.4 }, { value: 1, delay: 250 }],
-    rotateY: { value: '+=180', delay: 200 },
-    easing: 'easeInOutSine',
-    duration: 400,
-    complete: function(anim) {
-      playing = false;
-    }
-  });
-});
-
-var flipCard = document.querySelector("#animated_flip_card");
-var isAnimating = false;
-
-flipCard.addEventListener('click', function() {
-  if (isAnimating) return;
-
-  isAnimating = true;
-  anime({
-    targets: flipCard,
-    scale: [{ value: 1 }, { value: 1.4 }, { value: 1, delay: 250 }],
-    rotateY: { value: '+=180', delay: 200 },
-    easing: 'easeInOutSine',
-    duration: 400,
-    complete: function(anim) {
-      isAnimating = false;
-    }
-  });
-});
-
-
-
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', populateSidePanel);
 
