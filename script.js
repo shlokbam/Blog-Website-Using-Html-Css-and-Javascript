@@ -100,21 +100,27 @@ function openNav() {
 function closeNav() {
     document.getElementById("sidePanel").style.width = "0";
 }
-  
-// Function to populate the side panel with headings
+
 function populateSidePanel() {
     const sidePanel = document.getElementById("sidePanel");
     const headings = document.querySelectorAll('h1, h2');
-    
+    let headingCount = {}; // Object to keep track of heading texts
+
     headings.forEach(heading => {
-      if (!heading.id) {
-        heading.id = heading.textContent.toLowerCase().replace(/\s+/g, '-');
-      }
-      const link = document.createElement('a');
-      link.href = `#${heading.id}`;
-      link.textContent = heading.textContent;
-      link.onclick = closeNav;
-      sidePanel.appendChild(link);
+        let baseId = heading.textContent.toLowerCase().replace(/\s+/g, '-');
+        if (!headingCount[baseId]) {
+            headingCount[baseId] = 0;
+        } else {
+            headingCount[baseId]++;
+        }
+        // Add unique identifier if duplicate
+        heading.id = headingCount[baseId] > 0 ? `${baseId}-${headingCount[baseId]}` : baseId;
+
+        const link = document.createElement('a');
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent;
+        link.onclick = closeNav;
+        sidePanel.appendChild(link);
     });
 }
 
