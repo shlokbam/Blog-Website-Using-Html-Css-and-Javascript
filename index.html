@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Full-Screen Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <head>
@@ -14,17 +15,34 @@
   />
 </head>
 <body>
-    <header>
-        <h1 id="animated_title">Evolution Of Frameworks in Web Development</h1>
+
+    <header class="slide-in-title">
+      <span>E</span><span>v</span><span>o</span><span>l</span><span>u</span><span>t</span><span>i</span><span>o</span><span>n</span>
+      <span> </span>
+      <span>o</span><span>f</span>
+      <span> </span>
+      <span>F</span><span>r</span><span>a</span><span>m</span><span>e</span><span>w</span><span>o</span><span>r</span><span>k</span><span>s</span>
+      <span> </span>
+      <span>i</span><span>n</span>
+      <span> </span>
+      <span>W</span><span>e</span><span>b</span>
+      <span> </span>
+      <span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>m</span><span>e</span><span>n</span><span>t</span>
     </header>
+  
+  
+
     <div id="colorPicker">
         <input type="color" id="bgColor" value="#ffffff">
         <label for="bgColor">Change Background</label>
     </div>
+
     <main>
 
       <div id="sidePanel" class="side-panel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+      </div>
 
       </div>
       
@@ -552,7 +570,7 @@
               <div class="team-grid">
                   <div class="team-member">
                     <img src="51.jpeg" alt="Team Member 2" class="team-photo">
-                      <h3>Samruddhi Shinde</h3>
+                      <h3>Samruddhi <br>Shinde</h3>
                       <p>Roll No. : 41</p>
                   </div>
                   <div class="team-member">
@@ -562,7 +580,7 @@
                   </div>
                   <div class="team-member">
                       <img src="52.png" alt="Team Member 3" class="team-photo">
-                      <h3>Shreyas Chulliyan</h3>
+                      <h3>Shreyas <br>Chulliyan</h3>
                       <p>Roll No. : 44</p>
                   </div>
                   <div class="team-member">
@@ -571,8 +589,11 @@
                       <p>Roll No. : 68</p>
                   </div>
               </div>
-          </section>
-          
+          </section> 
+
+          <footer style="background-color: #2c3e50; color: #ecf0f1; text-align: center; padding: 15px 0;">
+            <p style="margin: 0;">&copy; 2024 Shlok Bam. All Rights Reserved.</p>
+        </footer>
 
         <div class="stats">
             <span id="viewCount">0</span> views

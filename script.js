@@ -45,6 +45,20 @@ function setupLikeButton() {
             likeCountDisplay.textContent = likedUsers.length;
             likeButton.disabled = true;
             likeButton.textContent = 'Liked';
+            const heart = document.createElement('span');
+    heart.textContent = '❤️';
+    heart.classList.add('heart-animation');
+    document.body.appendChild(heart);
+
+    // Position the heart at the like button's location
+    const buttonRect = likeButton.getBoundingClientRect();
+    heart.style.left = `${buttonRect.left + buttonRect.width / 2}px`;
+    heart.style.top = `${buttonRect.top - 10}px`;
+
+    // Remove the heart after animation
+    setTimeout(() => {
+        document.body.removeChild(heart);
+    }, 1000);
         });
     }
 }
@@ -127,3 +141,128 @@ function populateSidePanel() {
 // Call this function when the page loads
 document.addEventListener('DOMContentLoaded', populateSidePanel);
 
+document.querySelector('#feedbackForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevents form submission from refreshing the page
+
+    // Gather form data
+    const feedback = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        rating: document.getElementById('rating').value,
+        comments: document.getElementById('comments').value
+    };
+
+    // Store feedback in localStorage (convert to JSON string)
+    localStorage.setItem('userFeedback', JSON.stringify(feedback));
+
+    // Display success message
+    alert('Thank you for your feedback! Your data has been saved.');
+
+    // Optionally, you can clear the form after submission
+    document.getElementById('feedbackForm').reset();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayFeedback(); // Display feedback when the page loads
+
+    document.querySelector('#feedbackForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission from refreshing the page
+
+        // Gather form data
+        const feedback = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            rating: document.getElementById('rating').value,
+            comments: document.getElementById('comments').value
+        };
+
+        if (feedback.name && feedback.email && feedback.comments) {
+            // Retrieve existing feedback from localStorage
+            let feedbackList = JSON.parse(localStorage.getItem('userFeedbackList') || '[]');
+            feedbackList.push(feedback);
+            localStorage.setItem('userFeedbackList', JSON.stringify(feedbackList));
+
+            // Clear form after submission
+            document.getElementById('feedbackForm').reset();
+
+            // Display success message
+            alert('Thank you for your feedback!');
+
+            // Update displayed feedback
+            displayFeedback();
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
+});
+
+// Function to display feedback from localStorage
+function displayFeedback() {
+    const feedbackList = JSON.parse(localStorage.getItem('userFeedbackList') || '[]');
+    const feedbackContainer = document.getElementById('feedback-list');
+    feedbackContainer.innerHTML = ''; // Clear any existing feedback
+
+    feedbackList.forEach(feedback => {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.classList.add('feedback-item');
+        feedbackDiv.innerHTML = `
+            <p><strong>Name:</strong> ${feedback.name}</p>
+            <p><strong>Email:</strong> ${feedback.email}</p>
+            <p><strong>Rating:</strong> ${feedback.rating}</p>
+            <p><strong>Comments:</strong> ${feedback.comments}</p>
+            <hr>
+        `;
+        feedbackContainer.appendChild(feedbackDiv);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayFeedback(); // Display existing feedback on page load
+
+    document.querySelector('#feedbackForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent page reload
+
+        // Collect form data
+        const feedback = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            rating: document.getElementById('rating').value,
+            comments: document.getElementById('comments').value
+        };
+
+        if (feedback.name && feedback.email && feedback.comments) {
+            // Retrieve existing feedback from localStorage or create a new array
+            let feedbackList = JSON.parse(localStorage.getItem('userFeedbackList') || '[]');
+            feedbackList.push(feedback);
+            localStorage.setItem('userFeedbackList', JSON.stringify(feedbackList));
+
+            // Clear form after submission
+            document.getElementById('feedbackForm').reset();
+
+            // Display the new feedback
+            displayFeedback();
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
+});
+
+// Function to display feedback from localStorage
+function displayFeedback() {
+    const feedbackList = JSON.parse(localStorage.getItem('userFeedbackList') || '[]');
+    const feedbackContainer = document.getElementById('feedback-list');
+    feedbackContainer.innerHTML = ''; // Clear previous feedback
+
+    feedbackList.forEach(feedback => {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.classList.add('feedback-item');
+        feedbackDiv.innerHTML = `
+            <p><strong>Name:</strong> ${feedback.name}</p>
+            <p><strong>Email:</strong> ${feedback.email}</p>
+            <p><strong>Rating:</strong> ${feedback.rating}</p>
+            <p><strong>Comments:</strong> ${feedback.comments}</p>
+            <hr>
+        `;
+        feedbackContainer.appendChild(feedbackDiv);
+    });
+}
